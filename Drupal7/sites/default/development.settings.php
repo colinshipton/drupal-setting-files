@@ -1,10 +1,9 @@
 <?php
 /**
  * @file
- * amazee.io Drupal 7 development environment configuration file.
+ * Drupal 7 development environment configuration file.
  *
- * This file will only be included on development environments.
- * It contains some defaults that the amazee.io team suggests, please edit them as required.
+ * This file should only be included on development environments.
  */
 
 // Show all error messages on the site
@@ -21,11 +20,14 @@ $conf['page_cache_maximum_age'] = 0;
 
 // Aggregate and compress CSS files off
 $conf['preprocess_css'] = 0;
+$conf['css_gzip_compression'] = 0;
 
 // Aggregate JavaScript files off
 $conf['preprocess_js'] = 0;
+$conf['js_gzip_compression'] = 0;
 
-// Stage file proxy URL from production URL
-if(getenv('AMAZEEIO_PRODUCTION_URL')){
-  $conf['stage_file_proxy_origin'] = getenv('AMAZEEIO_PRODUCTION_URL');
-}
+// Set temporary path
+$conf['file_temporary_path'] = '/tmp';
+
+// Set Stage File Proxy 
+$conf['stage_file_proxy_origin'] = '';
